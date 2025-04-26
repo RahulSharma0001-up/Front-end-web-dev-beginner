@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Expense Splitter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --primary-dark: #0056b3;
+      --bg-color: #f0f4f8;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --text-color: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://www.financialexpress.com/wp-content/uploads/2024/08/travel-friends.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 20px;
+    }
+
+    /* Layout: left, container, right */
+    .layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    /* Side-section common */
+    .side-section {
+      width: 500px;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px var(--shadow);
+      text-align: center;
+      padding: 20px;
+      flex-shrink: 0;
+    }
+
+    .side-section img {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .side-section h3 {
+      margin-top: 15px;
+      color: var(--primary-color);
+      font-size: 20px;
+    }
+
+    .side-section p {
+      margin-top: 10px;
+      color: var(--text-color);
+      font-size: 18px;
+    }
+
+    /* Main container */
+    .container {
+      flex: 1;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px var(--shadow);
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    .details,
+    .output {
+      margin-top: 30px;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #e6f7ff;
+      color: var(--text-color);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 15px;
+    }
+
+    li {
+      background-color: #f9fbfc;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px var(--shadow);
+    }
+
+    /* Header styling */
+    header {
+      background-color: var(--primary-color);
+      padding: 15px 20px;
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--text-color);
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">ExpenseBuddy</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Create</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <!-- Left Side -->
+    <div class="side-section">
+      <img src="https://cdn.pixabay.com/photo/2024/02/21/08/44/woman-8587090_1280.png" alt="Trip" />
+      <h3>Trip</h3>
+      <p>
+      
+        Transportation: Bus, Train, Flight tickets, cab charges, fuel, tolls, parking. <br>
+
+       Accommodation: Hotel room charges, Airbnb, lodge, or guest house rentals.  <br>
+        
+       Sightseeing & Activities: Entry fees, adventure sports, guided tours, etc. <br>
+        
+       Snacks & Local Travel: Auto-rickshaw, metro, short taxi rides during the trip. <br>
+        
+       Miscellaneous: Travel insurance, SIM card purchase, souvenirs. </p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <h1>Group Expense Splitter</h1>
+      <div class="form-group">
+        <label for="trip">Select a Type:</label>
+        <select id="trip">
+          <option value="">Select</option>
+          <option value="Restaurant">Restaurant</option>
+          <option value="Trip">Trip</option>
+          <option value="Movie">Movie</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter location" />
+      </div>
+      <div class="form-group">
+        <label for="tripDate">Date:</label>
+        <input type="date" id="tripDate" />
+      </div>
+      <div class="form-group">
+        <label for="totalPeople">Total People:</label>
+        <input type="number" id="totalPeople" placeholder="e.g. 4" />
+      </div>
+      <div class="form-group">
+        <label for="payers">Payers (comma separated):</label>
+        <input type="text" id="payers" placeholder="e.g. Rahul, Mohit" />
+      </div>
+      <div class="form-group">
+        <label for="amount">Total Amount:</label>
+        <input type="number" id="amount" placeholder="e.g. 1000" />
+      </div>
+      <div class="form-group">
+        <label for="members">All Members who used Money (comma separated):</label>
+        <input type="text" id="members" placeholder="e.g. Rahul, Mohit, Sumit" />
+      </div>
+      <button onclick="addExpense()">Distribute Expense</button>
+      <button onclick="clearAll()" style="background:#dc3545;">Clear All</button>
+      <div class="details" id="extraInfo"></div>
+      <div class="output">
+        <h2>Who Pays Whom</h2>
+        <ul id="balanceList">
+          <li>No expenses added yet.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="side-section">
+      <img src="https://images.openai.com/thumbnails/6f3464bf6d646acfa9eea43ff06b640d.png" alt="Movie" />
+      <h3>Movie</h3>
+      <p>Plan movie nights and divide costs among your group seamlessly. <br>
+        Hotel, café, ya dhaba me baith kar khana khana ya parcel lena. <br>
+        Zomato, Swiggy, etc. se order kiya gaya food + delivery charges. <br>
+        Tea, coffee, cold drinks, juice, ice cream, shakes, et
+        Roadside stalls se samosa, patties, momos, maggi, etc.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ExpenseBuddy. All rights reserved.</p>
+    <p>Need help? <a href="#">Contact support</a></p>
+  </footer>
+
+  <script>
+    let expenses = [];
+
+    function addExpense() {
+      const trip = document.getElementById('trip').value;
+      const location = document.getElementById('location').value.trim();
+      const tripDate = document.getElementById('tripDate').value;
+      const totalPeople = parseInt(document.getElementById('totalPeople').value);
+      const payerInput = document.getElementById('payers').value.trim();
+      const amount = parseFloat(document.getElementById('amount').value);
+      const members = document.getElementById('members').value.split(',').map(m => m.trim()).filter(Boolean);
+      const payers = payerInput.split(',').map(p => p.trim()).filter(Boolean);
+
+      if (!trip || !location || !tripDate || !totalPeople || payers.length === 0 || isNaN(amount) || members.length === 0) {
+        alert('Please fill in all fields correctly.');
+        return;
+      }
+
+      if (members.length !== totalPeople) {
+        alert('Total people and number of members must match.');
+      
+</script>
