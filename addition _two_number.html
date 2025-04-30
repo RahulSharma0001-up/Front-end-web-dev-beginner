@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addition of two no. </title>
+</head>
+<body>
+    <form id="additionform"></form>
+    <input type="number" id="num1" required>
+    <br>
+    <input type="number" id="num2" required>
+    <br>
+    <button type="button" onclick="addNumbers()">Add</button>
+
+    </form>
+    <p id="result"></p>
+    <script>
+        function addNumbers(){
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1+num2;
+            document.getElementById('result').innerText = `The sum is : ${sum}`;
+
+        }
+    </script>
+
+
+</body>
+</html>

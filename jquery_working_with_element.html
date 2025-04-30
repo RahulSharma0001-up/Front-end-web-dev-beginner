@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .color-button{
+            margin:10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            color: rgb(255,255,255);}
+            .red{
+                background-color: red;
+            }
+            .green{
+                background-color: green;
+            }
+            .blue{
+                background-color: blue;
+            }
+        
+    </style>
+</head>
+<body>
+    <button class="color-button red">Red</button>
+    <button class="color-button green">Green</button>
+    <button class="color-button blue">Blue</button>
+
+<script>
+    $(document).ready(function(){
+        $('.color-button').click(function(){
+            var color = $(this).css('background-color');
+            $('body').css('background-color',color);
+
+        });
+    });
+</script>
+</body>
+</html>

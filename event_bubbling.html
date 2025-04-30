@@ -1,0 +1,20 @@
+<html>
+
+<body>
+    <div id="parent">
+        <button>
+            <h2>Parent</h2>
+        </button>
+        <button id="child">
+            <p>Child</p>
+        </button>
+    </div>
+    <script>
+        document.getElementById("child").addEventListener
+            ("click", function () { alert("You clicked the Child element!"); event.stopPropagation(); }, false);
+        document.getElementById("parent").addEventListener
+            ("click", function () { alert("You clicked the parent element!"); }, false);
+    </script>
+</body>
+
+</html>

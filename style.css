@@ -1,0 +1,7 @@
+p {
+    width: 200px;
+    border: 15px dotted rgb(0, 72, 255);
+    /* Added 'solid' as the border style */
+    padding: 20px;
+    margin: 10px;
+}

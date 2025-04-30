@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image slideshow with counter using javascript</title>
+</head>
+
+<body>
+    <img id="slide-image" src="" alt="slideshow" width="300">
+    <script>
+        const Images = ["1.jpg", "2.jpg"];
+        let i = 0;
+        function changeImage() {
+            document.getElementById("slide-image").src = Images[i];
+            i = (i + 1) % Images.length;
+        }
+        setInterval(changeImage, 3000);
+    </script>
+
+</body>
+
+</html>

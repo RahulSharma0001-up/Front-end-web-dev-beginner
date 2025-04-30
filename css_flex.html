@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css flex</title>
+    <style>
+        .flex-container{
+            display: flex; background-color: aqua; 
+        }
+
+        .flex-container>*{
+            background-color: #bb4e4e; margin: 10px; padding: 20px; font-size: 30px;
+            
+            }
+            @media(max-width: 800px){
+                .flex-container{
+                    flex-direction: column;
+                }
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex items</h1>
+    <div class="flex-container">
+        <div Style="flex-grow:3">C</div>
+        <div Style="flex-grow:2">S</div>
+        <div Style="flex-grow:1">S</div>
+    </div>
+
+    
+</body>
+</html>
